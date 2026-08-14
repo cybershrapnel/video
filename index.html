@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<!-- Open Graph (Facebook, iMessage, Slack, etc.) -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="NanoCheeZe MEQUAVIS AI Video Generator" />
+<meta property="og:description" content="AI Music Videos" />
+<meta property="og:url" content="https://recall.nanocheeze.com/" />
+<meta property="og:image" content="https://recall.nanocheeze.com/og-card.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<!-- Optional but nice -->
+<meta property="og:site_name" content="NanoCheeZe MEQUAVIS AI Video Generator" />
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AI Music Videos" />
+<meta name="twitter:description" content="NanoCheeZe MEQUAVIS AI Video Generator" />
+<meta name="twitter:image" content="https://recall.nanocheeze.com/og-card.png" />
+<!-- Optional: your handle if you have one -->
+<!-- <meta name="twitter:site" content="@yourhandle" /> -->
+
+  
+  <title>NanoCheeZe MEQUAVIS AI Video Generator</title>
+
+  <!-- Favicon (option A): point to an external icon you already have -->
+  <link rel="icon" type="image/png" href="https://recall.nanocheeze.com/favicon.ico" />
+
+  <!-- Favicon (option B): if you upload your own to this host, use:
+  <link rel="icon" href="/favicon.ico" />
+  -->
+
+  <style>
+    html, body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: #000;
+    }
+    #frame {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      border: 0;
+      display: block;
+      background: #000;
+    }
+    /* Optional: tiny loading overlay */
+    #loading {
+      position: fixed;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font: 14px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: #cfd6ff;
+      background: #000;
+      opacity: 1;
+      transition: opacity 200ms ease;
+      pointer-events: none;
+      z-index: 10;
+    }
+    #loading.hidden { opacity: 0; }
+  </style>
+</head>
+<body>
+  <div id="loading">Loading Video Generator…</div>
+
+  <iframe
+    id="frame"
+    src="https://xtdevelopment.net/video-gen/"
+    allow="fullscreen; clipboard-read; clipboard-write"
+    referrerpolicy="no-referrer-when-downgrade"
+  ></iframe>
+
+  <noscript>
+    <div style="position:fixed;inset:0;background:#000;color:#fff;padding:16px;">
+      This page requires JavaScript to display the embedded app.
+    </div>
+  </noscript>
+
+  <script>
+    (function () {
+      const f = document.getElementById("frame");
+      const loading = document.getElementById("loading");
+      f.addEventListener("load", () => loading.classList.add("hidden"));
+      // If it loads instantly from cache, hide quickly
+      setTimeout(() => loading.classList.add("hidden"), 2500);
+    })();
+  </script>
+</body>
+</html>
