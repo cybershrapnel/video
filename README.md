@@ -343,7 +343,6 @@ swarm-data/patched_api/ltx23_patched_api_<tag>.json
 | `EMPTY_WAIT` | checker | Seconds between empty claims (default 30) |
 | `BUSY_WAIT` | checker | Seconds when local queue has work (default 15) |
 | `UPGRADE_WAIT` | checker | Backoff on protocol mismatch (default 120) |
-| `MUSIC_DIR` / `MUSIC_CMD` | optional checker | ACE-Step idle mode |
 | `MUSIC_IDLE_CYCLES` | optional checker | Empty polls before starting music |
 | `RESTART_DELAY` | start_service | Child restart delay |
 | `AUTO_RESTART` | start_service | `0` to disable |
