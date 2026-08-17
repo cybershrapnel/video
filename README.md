@@ -85,7 +85,7 @@ Place these **in your ComfyUI install folder** (same place as `main.py` / workfl
 
 ```text
 ComfyUI/
-├── worker.py      # worker: watches queue/, runs LTX jobs
+├── worker.py               # worker: watches queue/, runs LTX jobs
 ├── checker.py              # hive client: fetch / upscale / upload / complete
 ├── start_service.py        # launches worker + checker together
 ├── ltx_23_audio.json       # API-format workflow (with audio)
