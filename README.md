@@ -222,18 +222,6 @@ python start_service.py
 
 Ctrl+C stops both (auto-restart on crash is enabled by default).
 
-### 4. Optional: music server when idle (secondary PC)
-
-Some checkers start **ACE-Step** when the hive has no matching work, and stop it when a video job is claimed (frees VRAM).
-
-```bat
-set MUSIC_DIR=D:\musicai\ACE-Step-1.5
-set MUSIC_CMD=uv run acestep-api
-set MUSIC_IDLE_CYCLES=2
-```
-
-Only enable this if that machine is dedicated to dual-duty and you accept kill/restart of the music API around video jobs.
-
 ---
 
 ## Job zip format
