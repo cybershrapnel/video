@@ -45,7 +45,7 @@ video.nanocheeze.com  (PHP)
     ▼
 Worker PC
     ├── ComfyUI (LTX workflow)
-    ├── run_audio_queue.py   (renders local queue/*.zip)
+    ├── worker.py   (renders local queue/*.zip)
     ├── checker.py           (fetches zips, upscales, uploads, completes)
     └── start_service.py     (starts both)
 ```
@@ -85,7 +85,7 @@ Place these **in your ComfyUI install folder** (same place as `main.py` / workfl
 
 ```text
 ComfyUI/
-├── run_audio_queue.py      # worker: watches queue/, runs LTX jobs
+├── worker.py      # worker: watches queue/, runs LTX jobs
 ├── checker.py              # hive client: fetch / upscale / upload / complete
 ├── start_service.py        # launches worker + checker together
 ├── ltx_23_audio.json       # API-format workflow (with audio)
@@ -180,7 +180,7 @@ The worker also tries common Desktop Shared / install paths automatically.
 
 ### 1. Copy scripts into ComfyUI root
 
-Put `run_audio_queue.py`, `checker.py`, `start_service.py`, and the two workflow JSON files in the ComfyUI directory.
+Put `worker.py`, `checker.py`, `start_service.py`, and the two workflow JSON files in the ComfyUI directory.
 
 ### 2. Set machine flags (checker)
 
@@ -217,7 +217,7 @@ python start_service.py
 
 `start_service.py` starts:
 
-- `run_audio_queue.py` — processes `queue/*.zip`
+- `worker.py` — processes `queue/*.zip`
 - `checker.py` — fetches from hive when queue is empty; after local finals exist, upscales + uploads + completes
 
 Ctrl+C stops both (auto-restart on crash is enabled by default).
