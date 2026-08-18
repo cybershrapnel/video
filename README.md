@@ -8,6 +8,16 @@ This is not a cloud farm. It is a **shared queue + home GPUs**.
 
 ---
 
+UPDATE!
+I have made a secondary method to join the hive using only LTX Desktop installed.
+
+You can either install LTX Desktop or the ComfyUI workflow, or both!
+I run both. This new checker script will auto launch LTX Desktop headlessly and generate jobs from the Text to video queue. When there are no jobs it will fall back into creating random anime videos using the scripts in the 2nd python file included in this zip. if you run both comfyui workflow and LTX Desktop this will manage both of them at the same time and make sure only one is running in VRAM at a time. Just replace your current checker.py with this new checker_ltx.py. You can still continue to run the original script for Comfyui only mode, or you can run this new script for either or both.
+
+You only need the video_swarm_ltx.zip to run both models concurrently.
+
+---
+
 ## What this is
 
 The system has two sides:
